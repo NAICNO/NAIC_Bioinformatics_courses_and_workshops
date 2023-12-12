@@ -19,5 +19,7 @@ Schedule
 
 1. XX
 2. YY   
- 
+
+
+.. mermaid:: images/mermaid-test.mmd
  

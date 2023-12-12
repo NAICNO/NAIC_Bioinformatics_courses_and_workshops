@@ -46,4 +46,7 @@ myst_enable_extensions = [
     "tasklist",
 ]
 
+html_js_files = [
+    'mermaid.js',
+]
 
