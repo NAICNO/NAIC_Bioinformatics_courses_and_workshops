@@ -1,10 +1,11 @@
-.. Pages template documentation master file, created by
-   sphinx-quickstart on Wed Aug 16 09:58:06 2023.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. Created by sabryr 12-12-2023
 
 Welcome to Pages template
 =========================
+
+.. important::
+   * Important info
+   * **Links:** https://www.naic.no
 
 .. toctree::
    :maxdepth: 2
@@ -12,12 +13,11 @@ Welcome to Pages template
     
    episodes/01-intro.md
 
-Heading1
-========
-Text
 
-Heading2
+Schedule
 --------
-Text
 
-
+1. XX
+2. YY   
+ 
+ 
