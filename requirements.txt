@@ -4,3 +4,4 @@ sphinx_rtd_theme_ext_color_contrast
 myst_nb
 sphinx-lesson==0.8.8
 sphinxcontrib-mermaid==0.7.1
+linkify-it-py
