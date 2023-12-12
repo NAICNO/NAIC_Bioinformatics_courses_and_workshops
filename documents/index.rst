@@ -9,6 +9,8 @@ Welcome to Pages template
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
+    
+   episodes/01-intro.md
 
 Heading1
 ========

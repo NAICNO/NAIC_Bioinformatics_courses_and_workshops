@@ -14,7 +14,7 @@ release = '0.1'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = []
+extensions = [ 'sphinxcontrib.mermaid','sphinx_lesson','sphinx.ext.githubpages', 'sphinx_tabs.tabs']
 
 templates_path = ['_templates']
 exclude_patterns = []
@@ -26,6 +26,9 @@ exclude_patterns = []
 
 html_theme = 'sphinx_rtd_theme'
 html_static_path = ['_static']
+html_css_files = [
+    'tabs.css',
+]
 
 # Other extensions
 myst_enable_extensions = [
