@@ -7,8 +7,8 @@
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
 project = 'Pages template'
-copyright = '2023, Sabry Razick'
-author = 'Sabry Razick'
+copyright = '2023, NAIC'
+author = 'NAIC'
 release = '0.1'
 
 # -- General configuration ---------------------------------------------------
@@ -49,4 +49,3 @@ myst_enable_extensions = [
 html_js_files = [
     'mermaid.js',
 ]
-
