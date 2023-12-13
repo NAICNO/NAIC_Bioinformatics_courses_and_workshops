@@ -11,6 +11,7 @@ NAIC short workshop sessions
    :caption: Contents:
     
    episodes/ngs-gpu.rst
+   episodes/Alphamissense.rst
 
 
  

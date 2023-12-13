@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'Pages template'
+project = 'NAIC Genomics training sessions'
 copyright = '2023, NAIC'
 author = 'NAIC'
 release = '0.1'
