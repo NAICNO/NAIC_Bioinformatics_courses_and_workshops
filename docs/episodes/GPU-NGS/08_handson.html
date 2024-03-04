@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hands-on experiment :mega: &mdash; NAIC Genomics training sessions 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx_lesson.css?v=0c089442" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="../../_static/minipres.js?v=a0d29692"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+        <script src="../../_static/mermaid.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            NAIC Genomics training sessions
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ngs-gpu.html">Accelerated NGS analysis in AI cloud (GPU cloud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Alphamissense.html">Deep learning use case in genomics</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">NAIC Genomics training sessions</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Hands-on experiment :mega:</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/episodes/GPU-NGS/08_handson.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="hands-on-experiment-mega">
+<h1>Hands-on experiment :mega:<a class="headerlink" href="#hands-on-experiment-mega" title="Link to this heading"></a></h1>
+<section id="naic-clara-parabricks">
+<h2>NAIC Clara Parabricks<a class="headerlink" href="#naic-clara-parabricks" title="Link to this heading"></a></h2>
+<p><img alt="image1" src="https://md.sigma2.no/uploads/fe60572a-f721-4406-a250-9f14ab5b1982.png" /></p>
+<section id="installation-clone-naic-clara-parabricks-github-ripository">
+<h3>Installation: Clone NAIC Clara Parabricks GitHub ripository<a class="headerlink" href="#installation-clone-naic-clara-parabricks-github-ripository" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clone NAIC Clara Parabricks GitHub ripository</span>
+git<span class="w"> </span>clone<span class="w"> </span>git@github.com:NAICNO/clara_parabricks.git
+
+<span class="c1"># NGS analysis workflows are available in `clara_parabricks/workflows`</span>
+<span class="nb">cd</span><span class="w"> </span>clara_parabricks/workflows
+</pre></div>
+</div>
+</section>
+<section id="run-command-for-gpu-only-pipeline">
+<h3>Run command for <code class="docutils literal notranslate"><span class="pre">GPU-only</span> <span class="pre">pipeline</span></code><a class="headerlink" href="#run-command-for-gpu-only-pipeline" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>bash<span class="w"> </span>nextflow-23.04.4-all<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>run<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>germline_pipeline.nf<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-profile<span class="w"> </span>singularity<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--fastq_folder<span class="w"> </span>&lt;path<span class="w"> </span>to<span class="w"> </span>*fastq.gz<span class="w"> </span>files&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--genome_folder<span class="w"> </span>&lt;path<span class="w"> </span>to<span class="w"> </span>GRCh38<span class="w"> </span>reference<span class="w"> </span>files&gt;<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--genome_json<span class="w"> </span>reference_data.json<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>--processor<span class="w"> </span>GPU<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-with-report<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-with-trace<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-resume
+
+<span class="c1">## Pipeline can use docker or singularity to run `parabricks` tools.</span>
+<span class="c1">## Refere `README.md` for more details.</span>
+</pre></div>
+</div>
+</section>
+<section id="reference-datasets">
+<h3>Reference datasets:<a class="headerlink" href="#reference-datasets" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>cat<span class="w"> </span>reference_data.json
+<span class="o">{</span>
+<span class="w">    </span><span class="s2">&quot;known_sites_gold_standard&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">      </span><span class="s2">&quot;vcf&quot;</span>:<span class="w"> </span><span class="s2">&quot;Mills_and_1000G_gold_standard.indels.hg38.vcf.gz&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;tbi&quot;</span>:<span class="w"> </span><span class="s2">&quot;Mills_and_1000G_gold_standard.indels.hg38.vcf.gz.tbi&quot;</span>
+<span class="w">    </span><span class="o">}</span>,
+<span class="w">    </span><span class="s2">&quot;known_sites_high_confidence&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">      </span><span class="s2">&quot;vcf&quot;</span>:<span class="w"> </span><span class="s2">&quot;1000G_phase1.snps.high_confidence.hg38.vcf.gz&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;tbi&quot;</span>:<span class="w"> </span><span class="s2">&quot;1000G_phase1.snps.high_confidence.hg38.vcf.gz.tbi&quot;</span>
+<span class="w">    </span><span class="o">}</span>,
+<span class="w">    </span><span class="s2">&quot;reference_fasta&quot;</span>:<span class="w"> </span><span class="o">{</span>
+<span class="w">      </span><span class="s2">&quot;fai&quot;</span>:<span class="w"> </span><span class="s2">&quot;GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.fai&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;amb&quot;</span>:<span class="w"> </span><span class="s2">&quot;GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.amb&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;pac&quot;</span>:<span class="w"> </span><span class="s2">&quot;GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.pac&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;ann&quot;</span>:<span class="w"> </span><span class="s2">&quot;GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.ann&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;bwt&quot;</span>:<span class="w"> </span><span class="s2">&quot;GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.bwt&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;sa&quot;</span>:<span class="w"> </span><span class="s2">&quot;GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.sa&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;fna&quot;</span>:<span class="w"> </span><span class="s2">&quot;GCA_000001405.15_GRCh38_no_alt_analysis_set.fna&quot;</span>,
+<span class="w">      </span><span class="s2">&quot;dict&quot;</span>:<span class="w"> </span><span class="s2">&quot;GCA_000001405.15_GRCh38_no_alt_analysis_set.fna.dict&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+</section>
+<section id="implementation-details-readme-md">
+<h3>Implementation details - <code class="docutils literal notranslate"><span class="pre">README.md</span></code><a class="headerlink" href="#implementation-details-readme-md" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/NAICNO/clara_parabricks">https://github.com/NAICNO/clara_parabricks</a></p></li>
+</ul>
+</section>
+<section id="output">
+<h3>Output<a class="headerlink" href="#output" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Results/GPU/
+--<span class="w"> </span>sample_name
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>alignments
+<span class="w">    </span><span class="p">|</span><span class="w">   </span><span class="p">|</span>--<span class="w"> </span>sample_name_GPU_recal_gpu.txt<span class="w"> </span>-&gt;<span class="w"> </span>&lt;path<span class="w"> </span>to<span class="w"> </span>workfolder&gt;/sample_name_GPU_recal_gpu.txt
+<span class="w">    </span><span class="p">|</span><span class="w">   </span><span class="p">|</span>--<span class="w"> </span>sample_name_pbrun_fq2bam_GPU.bam<span class="w"> </span>-&gt;<span class="w"> </span>&lt;path<span class="w"> </span>to<span class="w"> </span>workfolder&gt;/sample_name_pbrun_fq2bam_GPU.bam
+<span class="w">    </span><span class="p">|</span>--<span class="w"> </span>variants
+<span class="w">        </span><span class="p">|</span>--<span class="w"> </span>haplotypeCaller
+<span class="w">            </span><span class="p">|</span>--<span class="w"> </span>sample_name_pbrun_fq2bam_GPU.bam.vcf<span class="w"> </span>-&gt;<span class="w"> </span>&lt;path<span class="w"> </span>to<span class="w"> </span>workfolder&gt;/sample_name_pbrun_fq2bam_GPU.bam.vcf
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, NAIC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

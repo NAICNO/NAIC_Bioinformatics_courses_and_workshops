@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hands-on experiment :mega: &mdash; NAIC Genomics training sessions 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx_lesson.css?v=0c089442" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="../../_static/minipres.js?v=a0d29692"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+        <script src="../../_static/mermaid.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            NAIC Genomics training sessions
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ngs-gpu.html">Accelerated NGS analysis in AI cloud (GPU cloud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Alphamissense.html">Deep learning use case in genomics</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">NAIC Genomics training sessions</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Hands-on experiment :mega:</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/episodes/AlphaMissense/09_Handson.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="hands-on-experiment-mega">
+<h1>Hands-on experiment :mega:<a class="headerlink" href="#hands-on-experiment-mega" title="Link to this heading"></a></h1>
+<section id="objective">
+<h2>Objective<a class="headerlink" href="#objective" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Annotate variants in VCF file with AlphaMissense and RAVEL datasets,
+and then compare likely pathogenic variants identified in both
+methods</p></li>
+</ul>
+</section>
+<section id="main-steps">
+<h2>Main steps<a class="headerlink" href="#main-steps" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Read AlphaMissense_hg38 <code class="docutils literal notranslate"><span class="pre">missense</span> <span class="pre">proteome</span> <span class="pre">data</span></code> (71 million
+missense variant predictions covering the human proteome)</p></li>
+<li><p>Read REVEL score dataset (ensemble method for combing scores from 13
+tools predicting the pathogenicity of missense variants)</p></li>
+<li><p>Reformat REVEL dataframe so that same operations can be performed for
+both datasets</p></li>
+<li><p>Read variants in a VCF file and select missense variants. Then create
+a dataframe with variant info</p></li>
+<li><p>Identify likely pathogenic VCF-variants based on AlphaMissense
+classifications</p></li>
+<li><p>Identify likely pathogenic VCF-variants based on REVEL scores</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">pysam</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+<section id="read-alphamissense-hg38-missense-proteome-data-71-million-missense-variant-predictions-covering-the-human-proteome">
+<h3>Read AlphaMissense_hg38 <code class="docutils literal notranslate"><span class="pre">missense</span> <span class="pre">proteome</span> <span class="pre">data</span></code> (71 million missense variant predictions covering the human proteome)<a class="headerlink" href="#read-alphamissense-hg38-missense-proteome-data-71-million-missense-variant-predictions-covering-the-human-proteome" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Source:
+<a class="reference external" href="https://console.cloud.google.com/storage/browser/dm_alphamissense;tab=objects?prefix=&amp;forceOnObjectsSortingFiltering=false">https://console.cloud.google.com/storage/browser/dm_alphamissense;tab=objects?prefix=&amp;forceOnObjectsSortingFiltering=false</a></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">am</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;AlphaMissense_hg38.tsv&quot;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="n">am</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 71697556 entries, 0 to 71697555
+Data columns (total 10 columns):
+ #   Column            Dtype
+---  ------            -----
+ 0   #CHROM            object
+ 1   POS               int64
+ 2   REF               object
+ 3   ALT               object
+ 4   genome            object
+ 5   uniprot_id        object
+ 6   transcript_id     object
+ 7   protein_variant   object
+ 8   am_pathogenicity  float64
+ 9   am_class          object
+dtypes: float64(1), int64(1), object(8)
+memory usage: 5.3+ GB
+</pre></div>
+</div>
+</section>
+<section id="read-revel-score-dataset-ensemble-method-for-combing-scores-from-13-tools-predicting-the-pathogenicity-of-missense-variants">
+<h3>Read REVEL score dataset (ensemble method for combing scores from 13 tools predicting the pathogenicity of missense variants)<a class="headerlink" href="#read-revel-score-dataset-ensemble-method-for-combing-scores-from-13-tools-predicting-the-pathogenicity-of-missense-variants" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Source: <a class="reference external" href="https://sites.google.com/site/revelgenomics/downloads">https://sites.google.com/site/revelgenomics/downloads</a></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ravel</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;revel_with_transcript_ids&quot;</span><span class="p">)</span>
+<span class="n">ravel</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 82100677 entries, 0 to 82100676
+Data columns (total 9 columns):
+ #   Column                Dtype
+---  ------                -----
+ 0   chr                   object
+ 1   hg19_pos              int64
+ 2   grch38_pos            object
+ 3   ref                   object
+ 4   alt                   object
+ 5   aaref                 object
+ 6   aaalt                 object
+ 7   REVEL                 float64
+ 8   Ensembl_transcriptid  object
+dtypes: float64(1), int64(1), object(7)
+memory usage: 5.5+ GB
+</pre></div>
+</div>
+</section>
+<section id="reformat-revel-dataframe-so-that-same-operations-can-be-performed-for-both-datasets">
+<h3>Reformat REVEL dataframe so that same operations can be performed for both datasets<a class="headerlink" href="#reformat-revel-dataframe-so-that-same-operations-can-be-performed-for-both-datasets" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ravel</span> <span class="o">=</span> <span class="n">ravel</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
+    <span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;chr&quot;</span><span class="p">:</span> <span class="s2">&quot;#CHROM&quot;</span><span class="p">,</span> <span class="s2">&quot;grch38_pos&quot;</span><span class="p">:</span> <span class="s2">&quot;POS&quot;</span><span class="p">,</span> <span class="s2">&quot;ref&quot;</span><span class="p">:</span> <span class="s2">&quot;REF&quot;</span><span class="p">,</span> <span class="s2">&quot;alt&quot;</span><span class="p">:</span> <span class="s2">&quot;ALT&quot;</span><span class="p">}</span>
+<span class="p">)</span>
+<span class="n">ravel</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s2">&quot;hg19_pos&quot;</span><span class="p">,</span> <span class="s2">&quot;aaref&quot;</span><span class="p">,</span> <span class="s2">&quot;aaalt&quot;</span><span class="p">,</span> <span class="s2">&quot;Ensembl_transcriptid&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ravel</span> <span class="o">=</span> <span class="n">ravel</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span>
+    <span class="p">[</span><span class="s2">&quot;hg19_pos&quot;</span><span class="p">,</span> <span class="s2">&quot;aaref&quot;</span><span class="p">,</span> <span class="s2">&quot;aaalt&quot;</span><span class="p">,</span> <span class="s2">&quot;Ensembl_transcriptid&quot;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span>
+<span class="p">)</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">ravel</span><span class="p">[</span><span class="s2">&quot;#CHROM&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ravel</span><span class="p">[</span><span class="s2">&quot;#CHROM&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;chr</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+</section>
+<section id="read-variants-in-a-vcf-file-and-select-missense-variants-then-create-a-dataframe-with-variant-info">
+<h3>Read variants in a VCF file and select missense variants. Then create a dataframe with variant info<a class="headerlink" href="#read-variants-in-a-vcf-file-and-select-missense-variants-then-create-a-dataframe-with-variant-info" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Chromosome: <code class="docutils literal notranslate"><span class="pre">#CHROM</span></code></p></li>
+<li><p>Genomic loci: <code class="docutils literal notranslate"><span class="pre">POS</span></code></p></li>
+<li><p>Reference allele: <code class="docutils literal notranslate"><span class="pre">REF</span></code></p></li>
+<li><p>Alternate allele: <code class="docutils literal notranslate"><span class="pre">ALT</span></code></p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">## Functions to read vcf file</span>
+<span class="k">def</span> <span class="nf">read_vcf_file</span><span class="p">(</span><span class="n">vcf_file</span><span class="p">):</span>
+    <span class="c1"># Open the VCF file</span>
+    <span class="n">vcf_file</span> <span class="o">=</span> <span class="n">pysam</span><span class="o">.</span><span class="n">VariantFile</span><span class="p">(</span><span class="n">vcf_file</span><span class="p">)</span>
+    <span class="n">vc_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;#CHROM&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;POS&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;REF&quot;</span><span class="p">:</span> <span class="p">[],</span> <span class="s2">&quot;ALT&quot;</span><span class="p">:</span> <span class="p">[]}</span>
+    <span class="c1"># Iterate over each variant in the VCF file</span>
+    <span class="k">for</span> <span class="n">variant</span> <span class="ow">in</span> <span class="n">vcf_file</span><span class="p">:</span>
+        <span class="c1"># Get the variant position and alleles</span>
+        <span class="n">chrom</span> <span class="o">=</span> <span class="n">variant</span><span class="o">.</span><span class="n">chrom</span>
+        <span class="n">position</span> <span class="o">=</span> <span class="n">variant</span><span class="o">.</span><span class="n">pos</span>
+        <span class="n">alleles</span> <span class="o">=</span> <span class="n">variant</span><span class="o">.</span><span class="n">alleles</span>
+        <span class="c1"># Print the variant position and alleles</span>
+        <span class="k">if</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">alleles</span><span class="p">)</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">alleles</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">alleles</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+            <span class="n">vc_dict</span><span class="p">[</span><span class="s2">&quot;#CHROM&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">chrom</span><span class="p">)</span>
+            <span class="n">vc_dict</span><span class="p">[</span><span class="s2">&quot;POS&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">position</span><span class="p">)</span>
+            <span class="n">vc_dict</span><span class="p">[</span><span class="s2">&quot;REF&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">alleles</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+            <span class="n">vc_dict</span><span class="p">[</span><span class="s2">&quot;ALT&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">alleles</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+    <span class="k">return</span> <span class="n">vc_dict</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">## Set the VCF file as a variable</span>
+<span class="n">vcf_file</span> <span class="o">=</span> <span class="p">(</span>
+    <span class="s2">&quot;Garvan_NA12878_HG001_HiSeq_Exome_bwa-mem_CPU.sam.bam_markdup.bam_BQSR.bam.vcf&quot;</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">## Read the VCF file and create a dataframe with missense variant info</span>
+<span class="n">vc_dict</span> <span class="o">=</span> <span class="n">read_vcf_file</span><span class="p">(</span><span class="n">vcf_file</span><span class="p">)</span>
+<span class="n">vc_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">vc_dict</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vc_df</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 708845 entries, 0 to 708844
+Data columns (total 4 columns):
+ #   Column  Non-Null Count   Dtype
+---  ------  --------------   -----
+ 0   #CHROM  708845 non-null  object
+ 1   POS     708845 non-null  int64
+ 2   REF     708845 non-null  object
+ 3   ALT     708845 non-null  object
+dtypes: int64(1), object(3)
+memory usage: 21.6+ MB
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vc_df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="docutils container">
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style><table border="1" class="dataframe"><thead><tr style="text-align: right;"><th></th><th><p>#CHROM</p>
+</th><th><p>POS</p>
+</th><th><p>REF</p>
+</th><th><p>ALT</p>
+</th></tr></thead><tbody><tr><th><p>0</p>
+</th><td><p>chr1</p>
+</td><td><p>13684</p>
+</td><td><p>C</p>
+</td><td><p>T</p>
+</td></tr><tr><th><p>1</p>
+</th><td><p>chr1</p>
+</td><td><p>13813</p>
+</td><td><p>T</p>
+</td><td><p>G</p>
+</td></tr><tr><th><p>2</p>
+</th><td><p>chr1</p>
+</td><td><p>13838</p>
+</td><td><p>C</p>
+</td><td><p>T</p>
+</td></tr><tr><th><p>3</p>
+</th><td><p>chr1</p>
+</td><td><p>14522</p>
+</td><td><p>G</p>
+</td><td><p>A</p>
+</td></tr><tr><th><p>4</p>
+</th><td><p>chr1</p>
+</td><td><p>14542</p>
+</td><td><p>A</p>
+</td><td><p>G</p>
+</td></tr></tbody></table></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">## Identify likely pathogenic VCF-variants</span>
+<span class="c1">##        based on AlphaMissense classifications</span>
+
+<span class="n">am_vc</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">vc_df</span><span class="p">,</span> <span class="n">am</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#CHROM&quot;</span><span class="p">,</span> <span class="s2">&quot;POS&quot;</span><span class="p">,</span> <span class="s2">&quot;REF&quot;</span><span class="p">,</span> <span class="s2">&quot;ALT&quot;</span><span class="p">])</span>
+<span class="n">am_vc</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 10328 entries, 0 to 10327
+Data columns (total 10 columns):
+ #   Column            Non-Null Count  Dtype
+---  ------            --------------  -----
+ 0   #CHROM            10328 non-null  object
+ 1   POS               10328 non-null  int64
+ 2   REF               10328 non-null  object
+ 3   ALT               10328 non-null  object
+ 4   genome            10328 non-null  object
+ 5   uniprot_id        10328 non-null  object
+ 6   transcript_id     10328 non-null  object
+ 7   protein_variant   10328 non-null  object
+ 8   am_pathogenicity  10328 non-null  float64
+ 9   am_class          10328 non-null  object
+dtypes: float64(1), int64(1), object(8)
+memory usage: 807.0+ KB
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">am_vc</span><span class="p">[</span><span class="s2">&quot;am_class&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">am_vc</span><span class="p">[</span><span class="s2">&quot;am_class&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ambiguous</span>             <span class="mi">235</span>
+<span class="n">likely_benign</span>        <span class="mi">9805</span>
+<span class="n">likely_pathogenic</span>     <span class="mi">288</span>
+<span class="n">Name</span><span class="p">:</span> <span class="n">am_class</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">int64</span>
+</pre></div>
+</div>
+</section>
+<section id="count-the-number-of-likely-pathogenic-missense-variants-in-the-vcf-based-on-alphamissense-classification">
+<h3>Count the number of <code class="docutils literal notranslate"><span class="pre">likely_pathogenic</span></code> Missense variants in the VCF based on AlphaMissense classification<a class="headerlink" href="#count-the-number-of-likely-pathogenic-missense-variants-in-the-vcf-based-on-alphamissense-classification" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">am_vc</span><span class="p">[</span><span class="n">am_vc</span><span class="p">[</span><span class="s2">&quot;am_class&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;likely_pathogenic&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">288</span>
+</pre></div>
+</div>
+</section>
+<section id="identify-likely-pathogenic-vcf-variants-based-on-with-revel-scores">
+<h3>Identify likely pathogenic VCF-variants based on with REVEL scores<a class="headerlink" href="#identify-likely-pathogenic-vcf-variants-based-on-with-revel-scores" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ravel_cv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">vc_df</span><span class="p">,</span> <span class="n">ravel</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;#CHROM&quot;</span><span class="p">,</span> <span class="s2">&quot;POS&quot;</span><span class="p">,</span> <span class="s2">&quot;REF&quot;</span><span class="p">,</span> <span class="s2">&quot;ALT&quot;</span><span class="p">])</span>
+<span class="n">ravel_cv</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;pandas.core.frame.DataFrame&#39;&gt;
+RangeIndex: 9522 entries, 0 to 9521
+Data columns (total 5 columns):
+ #   Column  Non-Null Count  Dtype
+---  ------  --------------  -----
+ 0   #CHROM  9522 non-null   object
+ 1   POS     9522 non-null   object
+ 2   REF     9522 non-null   object
+ 3   ALT     9522 non-null   object
+ 4   REVEL   9522 non-null   float64
+dtypes: float64(1), object(4)
+memory usage: 372.1+ KB
+</pre></div>
+</div>
+</section>
+<section id="count-the-number-of-likely-pathogenic-missense-variants-in-the-vcf-based-on-revel-scores">
+<h3>Count the number of <code class="docutils literal notranslate"><span class="pre">likely_pathogenic</span></code> Missense variants in the VCF based on REVEL scores<a class="headerlink" href="#count-the-number-of-likely-pathogenic-missense-variants-in-the-vcf-based-on-revel-scores" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>Use less stringent and more stringent thresholds recommended in REVEL
+publication</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#### Count the number of `likely_pathogenic` Missense variants less stringent threshold</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">ravel_cv</span><span class="p">[</span><span class="n">ravel_cv</span><span class="p">[</span><span class="s2">&quot;REVEL&quot;</span><span class="p">]</span><span class="o">&gt;</span><span class="mf">0.5</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">170</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="revel-publication">
+<h2>REVEL publication<a class="headerlink" href="#revel-publication" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>REVEL score above 0.5, corresponding to a sensitivity of 0.754 and
+specificity of 0.891</p></li>
+<li><p>REVEL recommends more stringent REVEL score threshold - 0.75 that
+lead to higher specificity but lower sensitivity, with 52.1% of
+disease mutations, 3.3% of neutral variants</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">displot</span><span class="p">(</span><span class="n">ravel_cv</span><span class="p">[</span><span class="n">ravel_cv</span><span class="p">[</span><span class="s2">&quot;REVEL&quot;</span><span class="p">]</span><span class="o">&gt;</span><span class="mf">0.5</span><span class="p">][</span><span class="s2">&quot;REVEL&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<p><img alt="image1" src="https://md.sigma2.no/uploads/54cb2672-34b3-4ec6-acca-25b91bd9bb9a.png" /></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#### Count the number of `likely_pathogenic` Missense variants more stringent threshold</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">ravel_cv</span><span class="p">[</span><span class="n">ravel_cv</span><span class="p">[</span><span class="s2">&quot;REVEL&quot;</span><span class="p">]</span><span class="o">&gt;</span><span class="mf">0.75</span><span class="p">][</span><span class="s2">&quot;REVEL&quot;</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">44</span>
+</pre></div>
+</div>
+<section id="compare-vcf-variant-annotations-alphamissense-classifications-vs-revel-scores">
+<h3>Compare VCF variant annotations - AlphaMissense classifications vs REVEL scores<a class="headerlink" href="#compare-vcf-variant-annotations-alphamissense-classifications-vs-revel-scores" title="Link to this heading"></a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">### List of AlphaMissense annotated likely pathogenic variants</span>
+<span class="n">am_vc_list</span> <span class="o">=</span> <span class="n">am_vc</span><span class="p">[</span><span class="n">am_vc</span><span class="p">[</span><span class="s2">&quot;am_class&quot;</span><span class="p">]</span><span class="o">==</span><span class="s2">&quot;likely_pathogenic&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;#CHROM&quot;</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;POS&quot;</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">am_vc_list</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">288</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">### List of RAVEL score annotated likely pathogenic variants</span>
+<span class="n">ravel_cv_list</span> <span class="o">=</span> <span class="n">ravel_cv</span><span class="p">[</span><span class="n">ravel_cv</span><span class="p">[</span><span class="s2">&quot;REVEL&quot;</span><span class="p">]</span><span class="o">&gt;</span><span class="mf">0.75</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;</span><span class="si">{}</span><span class="s2">_</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;#CHROM&quot;</span><span class="p">],</span><span class="n">x</span><span class="p">[</span><span class="s2">&quot;POS&quot;</span><span class="p">]),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">to_list</span><span class="p">()</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">ravel_cv_list</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">44</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">### Import plotting modules</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib_venn</span> <span class="kn">import</span> <span class="n">venn2</span>
+</pre></div>
+</div>
+<section id="venn-diagram-showing-the-common-and-unique-variant-counts-in-alphamissense-and-ravel-annotations">
+<h4>Venn diagram showing the common and unique variant counts in AlphaMissense and RAVEL annotations<a class="headerlink" href="#venn-diagram-showing-the-common-and-unique-variant-counts-in-alphamissense-and-ravel-annotations" title="Link to this heading"></a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">venn2</span><span class="p">([</span><span class="nb">set</span><span class="p">(</span><span class="n">am_vc_list</span><span class="p">),</span> <span class="nb">set</span><span class="p">(</span><span class="n">ravel_cv_list</span><span class="p">)],</span> <span class="n">set_labels</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;AlphaMissense annotations&#39;</span><span class="p">,</span> <span class="s1">&#39;RAVEL annotations&#39;</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+<p><img alt="image2" src="https://md.sigma2.no/uploads/0584f316-e8a0-467b-b3f7-e931cf66d9b6.png" /></p>
+</section>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, NAIC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

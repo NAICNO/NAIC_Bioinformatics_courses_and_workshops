@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studying genetic variations and disease outcomes &mdash; NAIC Genomics training sessions 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=19f00094" />
+      <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+      <link rel="stylesheet" type="text/css" href="../../_static/sphinx_lesson.css?v=0c089442" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+      <link rel="stylesheet" type="text/css" href="../../_static/tabs.css?v=a5c4661c" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=2709fde1"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+        <script src="../../_static/minipres.js?v=a0d29692"></script>
+        <script>let toggleHintShow = 'Click to show';</script>
+        <script>let toggleHintHide = 'Click to hide';</script>
+        <script>let toggleOpenOnPrint = 'true';</script>
+        <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+        <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true});</script>
+        <script src="../../_static/mermaid.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            NAIC Genomics training sessions
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../ngs-gpu.html">Accelerated NGS analysis in AI cloud (GPU cloud)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Alphamissense.html">Deep learning use case in genomics</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">NAIC Genomics training sessions</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Studying genetic variations and disease outcomes</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/episodes/AlphaMissense/03_AlphaMissense.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="studying-genetic-variations-and-disease-outcomes">
+<h1>Studying genetic variations and disease outcomes<a class="headerlink" href="#studying-genetic-variations-and-disease-outcomes" title="Link to this heading"></a></h1>
+<ul class="simple">
+<li><p>Deep learning is well-suited for analyzing the intricate
+relationships between genetic variations and disease outcomes,</p>
+<ul>
+<li><p>ultimately leading to accurate predictions of variant
+pathogenicity</p></li>
+<li><p>E.g., AlphaMissense from Google DeepMind</p></li>
+</ul>
+</li>
+</ul>
+<section id="alphamissense">
+<h2>AlphaMissense<a class="headerlink" href="#alphamissense" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>AlphaMissense is developed to predict the pathogenicity of missense
+variants</p>
+<ul>
+<li><p>i.e., Whether variants that change the protein sequences are
+likely to cause diseases (pathogenic) or not (bening).</p></li>
+</ul>
+</li>
+<li><p>AlphaMissense is based on AlphaFold model</p>
+<ul>
+<li><p>AlphaFold - Accuratley predicts 3D structure of proteins from
+their amino acid sequences using advanced deep learning techniques
+and biological knowledge-bases</p></li>
+</ul>
+</li>
+</ul>
+<section id="alphamissense-deep-learning-workflow">
+<h3>AlphaMissense deep learning workflow<a class="headerlink" href="#alphamissense-deep-learning-workflow" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>AlphaMissense deep learning workflow can be described in 4 main steps</p></li>
+</ul>
+<div class="mermaid">
+            graph TD;
+   1(Data preparation) --&gt; 2(Feature engineering)
+   2 --&gt; 3(Model training)
+   3 --&gt; 4(Model evaluation)
+
+   classDef highlight fill:#99ccff;
+   classDef white fill:#ffffff;
+   class 1,2,3,4 highlight;
+        </div><div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="rubric" id="genomics-context-of-each-step-mega">Genomics context of each step :mega:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>ML Concept</p></th>
+<th class="head"><p>Genomics conext</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Data preparation</p></td>
+<td><p>Collecting and processing a large
+dataset of missense variants along with
+annotations indicating their
+pathogenicity (disease-causing or
+benign)</p></td>
+</tr>
+<tr class="row-odd"><td><p>Feature engineering</p></td>
+<td><p>Convert amino acid sequences into
+representations suitable for deep
+learning models</p></td>
+</tr>
+<tr class="row-even"><td><p>Model training</p></td>
+<td><p>Fine-tune AlphaFold model that predicts
+protein structure to predict variant
+pathogenicity</p></td>
+</tr>
+<tr class="row-odd"><td><p>Model evaluation</p></td>
+<td><p>Assess the accuracy and generalizability
+of variant pathogenicity prediction
+using independent datasets</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, NAIC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
